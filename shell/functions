@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+lua_install() {
+    make install INSTALL_TOP="${packages_path}/versions/${package_name}/${package_version}"
+}

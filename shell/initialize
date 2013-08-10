@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+
+typeset uname
+uname=$(uname | tr '[A-Z]' '[a-z]')
+
+case ${uname} in
+    (aix|ansi|bsd|freebsd|linux|mingw|posix|solaris)
+        make_flags+=(${uname})
+        ;;
+    (darwin)
+        make_flags+=(macosx)
+        ;;
+    *)
+        make_flags+=(generic)
+        ;;
+esac
+
